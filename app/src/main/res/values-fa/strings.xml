@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">برنامه ی من مرد</string>
     <string name="greeting">سلام و عرض خوش آمد گویی و درود به برنامه ترجمه تمرینی</string>
+    <string name="this_is_a_long_text">وُشمگیر پسر زیار ملقب ب بین این دو دست به دست شد.</string>
 </resources>

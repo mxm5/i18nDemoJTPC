@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">Mi hombre de la aplicación</string>
     <string name="greeting">Hola y bienvenidos a la aplicación de las pruebas de traducción</string>
+    <string name="this_is_a_long_text">El caso Periodistas de La Nación contra el Estado (conocido también como caso Parque Viva) fue</string>
 </resources>

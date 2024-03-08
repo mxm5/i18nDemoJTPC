@@ -2,7 +2,8 @@
     <string name="app_name">my app man</string>
     <string name="android" translatable="false">Android</string>
     <string name="greeting">hello and welcome to the application of the translation testings</string>
-    <string name="spanish">spanish</string>
-    <string name="german">german</string>
-    <string name="english">english</string>
+    <string name="spanish" translatable="false">spanish</string>
+    <string name="german" translatable="false">german</string>
+    <string name="english" translatable="false">english</string>
+    <string name="this_is_a_long_text">Williams. She also made extensive ph</string>
 </resources>

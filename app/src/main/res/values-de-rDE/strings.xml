@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">Mein App-Mann</string>
     <string name="greeting">Hallo und herzlich willkommen zur Anwendung der Übersetzungstests</string>
+    <string name="this_is_a_long_text">Am Turme (Originalschreibweise Am Thurme) ist ein im Jahr 1842 erstmals</string>
 </resources>
