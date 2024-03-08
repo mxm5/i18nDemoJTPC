@@ -14,11 +14,8 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-
-        setApplicationLanguageToLocale(loadPreviouslySelectedLanguageFromSharedPrefs())
-
+        setApplicationLanguageToLocaleSelectedBeforeStart()
         super.onCreate(savedInstanceState)
-
         setContent {
 //            HomeScreen()
             ChangeLanguageScreen()
@@ -33,8 +30,8 @@ class MainActivity : ComponentActivity() {
 
     }
 
-    private fun setApplicationLanguageToLocale(locale: Locale) {
-
+    private fun setApplicationLanguageToLocaleSelectedBeforeStart() {
+        val locale = loadPreviouslySelectedLanguageFromSharedPrefs();
         val config = resources.configuration
         Locale.setDefault(locale)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1)
