@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mein App-Mann</string>
+    <string name="greeting">Hallo und herzlich willkommen zur Anwendung der Übersetzungstests</string>
+</resources>
