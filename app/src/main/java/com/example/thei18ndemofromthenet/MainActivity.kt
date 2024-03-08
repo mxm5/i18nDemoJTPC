@@ -70,7 +70,7 @@ fun ChangeLang(name: String, modifier: Modifier = Modifier) {
     val flags = arrayOf(
         R.drawable.flag_uk,
         R.drawable.flag_es,
-        R.drawable.flag_es,
+        R.drawable.flag_de,
         R.drawable.flag_ar,
         R.drawable.flag_fa
     )
