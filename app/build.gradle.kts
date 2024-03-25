@@ -52,6 +52,8 @@ android {
 
 dependencies {
 
+    // for the older versions support we should use the library
+    implementation("androidx.appcompat:appcompat:1.6.1")
     // this was done for the navigation that is ignored right now
     val nav_version = "2.7.7"
     implementation("androidx.navigation:navigation-compose:$nav_version")
