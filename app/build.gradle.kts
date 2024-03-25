@@ -8,6 +8,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
+        resourceConfigurations +=(arrayListOf("en", "ar", "de", "fa", "es"))
         applicationId = "com.example.thei18ndemofromthenet"
         minSdk = 29
         targetSdk = 34
