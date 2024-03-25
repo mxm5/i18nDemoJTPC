@@ -2,11 +2,8 @@ package com.example.thei18ndemofromthenet
 
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.core.splashscreen.SplashScreen
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import java.util.Locale
 
 class MainActivity : ComponentActivity() {
@@ -24,7 +21,10 @@ class MainActivity : ComponentActivity() {
 //        // locale configurations // this loc shows the locale before getting fetched
 //        // from the shared prefs which is device default
 //        Log.i(resources.configuration.locale.toLanguageTag(),"locale")
-        setApplicationLanguageToLocaleSelectedBeforeStart()
+
+//        setApplicationLanguageToLocaleSelectedBeforeStart()
+
+
 //        // this should be called in the start of the app but before the supers  super.onCreate()
 //        Log.i(resources.configuration.locale.toLanguageTag(),"locale")
 //        // this loads splash screen but with the unchanged locale because
@@ -37,6 +37,20 @@ class MainActivity : ComponentActivity() {
 
         super.onCreate(savedInstanceState)
         setContent {
+//            val context = LocalContext.current
+//            LaunchedEffect(key1 = Unit) {
+//                launch(Dispatchers.Main) {
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+//                        val systemService: LocaleManager =
+//                            context.getSystemService(LocaleManager::class.java)
+//                        systemService.applicationLocales = LocaleList.forLanguageTags(
+//                            "fa"
+//                        )
+//                    } else {
+//                        AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags("fa"))
+//                    }
+//                }
+//            }
 //            HomeScreen()
             ChangeLanguageScreen()
         }
