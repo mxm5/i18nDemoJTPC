@@ -1,10 +1,12 @@
 package com.example.thei18ndemofromthenet
 
-import android.app.Activity
+import android.app.LocaleManager
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Build
+import android.os.LocaleList
 import androidx.annotation.DrawableRes
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -23,8 +25,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -36,7 +36,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
+import androidx.core.os.LocaleListCompat
 import java.util.Locale
 
 
@@ -130,22 +130,44 @@ fun SpecialText(
             .background(Color.Yellow.copy(alpha = 0.3f))
             .clickable {
 
-                val config = resources.configuration
-                Locale.setDefault(locale)
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1)
-                    config.setLocale(locale)
-                else
-                    config.locale = locale
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-                    context.createConfigurationContext(config)
-                resources.updateConfiguration(config, resources.displayMetrics)
-                with(sharedPreferences.edit()) {
-                    putString("selected_lang_tag",locale.toLanguageTag())
-                    apply()
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    val systemService: LocaleManager =
+                        context.getSystemService(LocaleManager::class.java)
+                    systemService.applicationLocales = LocaleList.forLanguageTags(
+                        name
+                    )
+                } else {
+                    AppCompatDelegate.setApplicationLocales(
+                        LocaleListCompat.forLanguageTags(
+                            name
+                        )
+                    )
                 }
 
-                (context as? Activity)?.recreate()
+//
+//                val config = resources.configuration
+//                Locale.setDefault(locale)
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1)
+//                    config.setLocale(locale)
+//                else
+//                    config.locale = locale
+//
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
+//                    context.createConfigurationContext(config)
+//                resources.updateConfiguration(config, resources.displayMetrics)
+//
+//
+//                ////    shared preferences part
+//
+//
+//                with(sharedPreferences.edit()) {
+//                    putString("selected_lang_tag", locale.toLanguageTag())
+//                    apply()
+//                }
+//
+//
+//                (context as? Activity)?.recreate()
 
 
             }) {
