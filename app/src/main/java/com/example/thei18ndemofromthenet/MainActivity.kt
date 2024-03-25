@@ -2,8 +2,11 @@ package com.example.thei18ndemofromthenet
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.core.splashscreen.SplashScreen
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import java.util.Locale
 
 class MainActivity : ComponentActivity() {
@@ -13,8 +16,25 @@ class MainActivity : ComponentActivity() {
 //    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
+//        // before setting the application locale from the persistence unit
+//        // the default settings are being applied from the device locale
+//        // problem with that is the pre rendered stuff wont be recreated so the
+//        // change functions are not being working completely so there should be
+//        // another way for changing language so we need to try with per app
+//        // locale configurations // this loc shows the locale before getting fetched
+//        // from the shared prefs which is device default
+//        Log.i(resources.configuration.locale.toLanguageTag(),"locale")
         setApplicationLanguageToLocaleSelectedBeforeStart()
+//        // this should be called in the start of the app but before the supers  super.onCreate()
+//        Log.i(resources.configuration.locale.toLanguageTag(),"locale")
+//        // this loads splash screen but with the unchanged locale because
+//        // this built before anything else
+//        val splashScreen = installSplashScreen()
+//
+//        Log.i(resources.configuration.locale.toLanguageTag(),"locale")
+
+
+
         super.onCreate(savedInstanceState)
         setContent {
 //            HomeScreen()
@@ -44,6 +64,7 @@ class MainActivity : ComponentActivity() {
         resources.updateConfiguration(config, resources.displayMetrics)
     }
 }
+
 
 
 
